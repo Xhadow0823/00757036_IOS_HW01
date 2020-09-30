@@ -190,9 +190,11 @@ struct ContentView: View {
                         path.addQuadCurve(to: CGPoint(x: 233, y: 320), control: CGPoint(x: 227, y: 327))
                     }.fill(Color(red: 191/255, green: 119/255, blue: 0/255))
                     
+                    //left
+                    Eye().fill(Color(red: 34/255, green: 24/255, blue: 22/255))
                     
-                    
-                    
+                    Eye() //right
+                        
                 }
                 
                 Group { // 尾巴
@@ -232,5 +234,18 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct Eye: Shape {
+    func path(in rect: CGRect) -> Path {
+        Path {
+            (path) in
+            path.move(to: CGPoint(x: 212, y: 232))
+            path.addQuadCurve(to: CGPoint(x: 208, y: 273), control: CGPoint(x: 199, y: 254))
+            path.addQuadCurve(to: CGPoint(x: 249, y: 278), control: CGPoint(x: 228, y: 292))
+            path.addQuadCurve(to: CGPoint(x: 248, y: 235), control: CGPoint(x: 258, y: 255))
+            path.addQuadCurve(to: CGPoint(x: 212, y: 232), control: CGPoint(x: 230, y: 215))
+        }
     }
 }

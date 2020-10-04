@@ -15,6 +15,7 @@ struct ContentView: View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
                 .opacity(0.8)
+            
             VStack {
             ZStack {  //Cat
                 Group {
@@ -199,9 +200,11 @@ struct ContentView: View {
                         
                         Eye()  //left
                             .fill(Color(red: 34/255, green: 24/255, blue: 22/255))
+                                //.fill(Color(red: 1, green: 0, blue: 0))
                         
                         Eye()  //right
                             .fill(Color(red: 34/255, green: 24/255, blue: 22/255))
+                            //.fill(Color(red: 1, green: 0, blue: 0))
                             .rotation3DEffect(
                             .degrees(180),
                                 axis: (x: 0.0, y: 1.0, z: 0.0))
@@ -352,5 +355,11 @@ struct catNose: View {
             Path(ellipseIn: CGRect(x: 291, y: 257, width: 309-291, height: 269-257))
                 .fill(Color(red: 251/255, green: 197/255, blue: 171/255))
         }
+    }
+}
+
+struct AppleView_LibraryContent: LibraryContentProvider {
+    static var views: [LibraryItem] {
+        [LibraryItem(ContentView(), title: "艾路貓")]
     }
 }
